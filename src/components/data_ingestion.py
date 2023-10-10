@@ -27,7 +27,7 @@ class DataIngestion:
             df=pd.read_csv(os.path.join('notebooks/data','train.csv'))
             logging.INFO('Dataset read as pandas DatsFrame')
 
-            os.makedirs(os.path.join(self.ingestion_config.raw_data_path), exist_ok=True)
+            os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path), exist_ok=True)
 
             df.to_csv(self.ingestion_config.raw_data_path, index=False)
 
